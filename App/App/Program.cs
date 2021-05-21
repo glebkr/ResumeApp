@@ -8,7 +8,7 @@ namespace App
 {
     static class Program
     {
-        public static Form1 form1;
+        public static main mainform;
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
@@ -17,7 +17,7 @@ namespace App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new main());
         }
     }
 }

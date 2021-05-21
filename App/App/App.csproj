@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942" />
+    <Reference Include="Google.Protobuf, Version=3.11.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" />
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d" />
+    <Reference Include="MySql.Data, Version=8.0.23.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Renci.SshNet, Version=2020.0.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,6 +53,8 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutBox.cs">
@@ -52,28 +63,102 @@
     <Compile Include="AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="del_position.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="del_position.Designer.cs">
+      <DependentUpon>del_position.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="del_subvision.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="del_subvision.Designer.cs">
+      <DependentUpon>del_subvision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insert_position.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insert_position.Designer.cs">
+      <DependentUpon>insert_position.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insert_subvision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insert_subvision.Designer.cs">
+      <DependentUpon>insert_subvision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main.Designer.cs">
+      <DependentUpon>main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insert_resume.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insert_resume.Designer.cs">
+      <DependentUpon>insert_resume.cs</DependentUpon>
+    </Compile>
+    <Compile Include="del_resume.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="del_resume.Designer.cs">
+      <DependentUpon>del_resume.cs</DependentUpon>
+    </Compile>
+    <Compile Include="update_position.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="update_position.Designer.cs">
+      <DependentUpon>update_position.cs</DependentUpon>
+    </Compile>
+    <Compile Include="update_resume.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="update_resume.Designer.cs">
+      <DependentUpon>update_resume.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="resume_infoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>resume_infoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="update_subvision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="update_subvision.Designer.cs">
+      <DependentUpon>update_subvision.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="del_position.resx">
+      <DependentUpon>del_position.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="del_subvision.resx">
+      <DependentUpon>del_subvision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insert_position.resx">
+      <DependentUpon>insert_position.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insert_subvision.resx">
+      <DependentUpon>insert_subvision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main.resx">
+      <DependentUpon>main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insert_resume.resx">
+      <DependentUpon>insert_resume.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="del_resume.resx">
+      <DependentUpon>del_resume.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="update_position.resx">
+      <DependentUpon>update_position.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="update_resume.resx">
+      <DependentUpon>update_resume.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -84,6 +169,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="update_subvision.resx">
+      <DependentUpon>update_subvision.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,6 +181,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="resume_infoDataSet.xsc">
+      <DependentUpon>resume_infoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="resume_infoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>resume_infoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resume_infoDataSet.xss">
+      <DependentUpon>resume_infoDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
