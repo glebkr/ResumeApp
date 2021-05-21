@@ -87,7 +87,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "del_position";
-            this.Text = "Удаление должности";;
+            this.Text = "Удаление должности";
             this.ResumeLayout(false);
             this.PerformLayout();
 
